@@ -35,112 +35,138 @@ SOURCE_WEIGHTS = {
 }
 
 CATEGORY_WEIGHTS = {
-    "website_dev": 3.0,
-    "seo": 3.0,
-    "local_seo": 2.4,
-    "technical_seo": 2.6,
-    "aeo_ai_search": 3.2,
-    "conversion_cro": 2.2,
-    "analytics_tracking": 2.0,
-    "content_brand": 1.8,
-    "performance_marketing": 1.9,
-    "business_triggers": 1.4
+    "paid_social": 3.1,
+    "paid_search_display": 3.0,
+    "performance_marketing_core": 2.8,
+    "analytics_attribution": 2.6,
+    "cro_ux_conversion": 3.0,
+    "ecommerce_unit_econ": 2.2,
+    "creative_ugc_video": 3.0,
+    "creative_testing_iteration": 2.6,
+    "marketplace_ads": 2.8,
+    "marketplace_ops_listings": 2.4,
+    "lead_generation_b2b": 2.0,
+    "business_triggers": 1.6
 }
 
 KEYWORDS = {
-    "website_dev": [
-        r"website (redesign|revamp|rebuild|refresh|overhaul)",
-        r"site (redesign|revamp|rebuild|refresh|overhaul)",
-        r"new website", r"website launch", r"site launch",
-        r"web development", r"website development", r"web design", r"website design",
-        r"UI\s*/\s*UX", r"\bUX\b", r"\bUI\b", r"user experience",
-        r"landing page(s)?", r"conversion page(s)?",
-        r"wordpress", r"webflow", r"shopify", r"wix", r"squarespace",
-        r"headless (cms|commerce)", r"\bCMS\b", r"content management system",
-        r"site migration", r"website migration", r"domain migration",
-        r"page speed", r"core web vitals", r"\bCWV\b", r"performance optimization"
+    "paid_social": [
+        r"\bmeta\s+ads\b", r"\bfacebook\s+ads\b", r"\binstagram\s+ads\b",
+        r"\btiktok\s+ads\b", r"\bsnap(chat)?\s+ads\b", r"\bpinterest\s+ads\b",
+        r"\blinkedin\s+ads\b", r"\byoutube\s+ads\b",
+        r"\bpaid\s+social\b", r"\bsocial\s+ads?\b",
+        r"\bad\s+account\b", r"\bad\s+set(s)?\b", r"\bcampaign(s)?\b",
+        r"\bcreative\s+fatigue\b", r"\bad\s+frequency\b", r"\bthumbstop(per)?\b",
+        r"\bscal(ing|e)\s+ads?\b"
     ],
 
-    "seo": [
-        r"\bSEO\b", r"search engine optim(iz|is)ation",
-        r"organic (traffic|growth)", r"rank(ing|ings)?", r"SERP(s)?",
-        r"keyword research", r"on-?page SEO", r"off-?page SEO",
-        r"backlink(s)?", r"link building", r"technical audit",
-        r"site audit", r"SEO audit", r"content audit",
-        r"meta (title|description)s?", r"search visibility",
-        r"competitor analysis", r"top of google", r"google ranking"
+    "paid_search_display": [
+        r"\bpaid\s+search\b", r"\bsearch\s+ads?\b", r"\bgoogle\s+ads\b",
+        r"\bshopping\s+ads?\b", r"\bperformance\s+max\b|\bpmax\b",
+        r"\bdisplay\s+ads?\b", r"\bgoogle\s+display\b|\bgdn\b",
+        r"\byoutube\s+campaign(s)?\b", r"\bvideo\s+ads?\b",
+        r"\bretarget(ing)?\b|\bremarket(ing)?\b", r"\blookalike\b|\blal\b",
+        r"\bkeyword(s)?\b.*\b(bid|bidding|match\s+type)\b",
+        r"\bsem\b", r"\bppc\b"
     ],
 
-    "local_seo": [
-        r"local SEO", r"\bGMB\b", r"google my business",
-        r"google business profile", r"GBP optimization",
-        r"maps ranking", r"google maps", r"near me",
-        r"citations", r"NAP consistency",
-        r"local listings?", r"directory listings?",
-        r"reviews? (management|strategy)", r"rating(s)?", r"reputation management"
+    "performance_marketing_core": [
+        r"\bperformance\s+marketing\b", r"\bpaid\s+growth\b",
+        r"\bdigital\s+marketing\b.*\b(leads?|growth|scale)\b",
+        r"\bmedia\s+buy(ing|er)\b", r"\bcampaign\s+architecture\b",
+        r"\baccountable\s+growth\b", r"\bscale\b.*\b(ads?|spend|budget)\b",
+        r"\blead\s+gen(eration)?\b", r"\bdemand\s+gen(eration)?\b",
+        r"\bfunnel(s)?\b", r"\bacquisition\b", r"\bcustomer\s+acquisition\b"
     ],
 
-    "technical_seo": [
-        r"technical SEO", r"crawl(ing)?", r"index(ing)?", r"indexation",
-        r"robots\.txt", r"sitemap\.xml", r"canonical(s)?",
-        r"redirect(s)?", r"301", r"404", r"broken link(s)?",
-        r"schema markup", r"structured data", r"json-?ld",
-        r"site architecture", r"internal link(ing)?",
-        r"javascript SEO", r"render(ing)?", r"log file analysis",
-        r"core web vitals", r"\bLCP\b", r"\bCLS\b", r"\bINP\b"
+    "analytics_attribution": [
+        r"\btracking\b", r"\bconversion\s+tracking\b", r"\bevent\s+tracking\b",
+        r"\battribution\b", r"\bmulti[-\s]?touch\b|\bMTA\b",
+        r"\bincremental(ity)?\b|\bholdout\b|\blift\s+test\b",
+        r"\bpixel(s)?\b", r"\bserver[-\s]?side\b|\bcapi\b|\bconversion\s+api\b",
+        r"\bUTM(s)?\b", r"\bga4\b|\bgoogle\s+analytics\b",
+        r"\bgtm\b|\bgoogle\s+tag\s+manager\b",
+        r"\bsearch\s+console\b|\bgsc\b",
+        r"\blook(er)?\s+studio\b|\bdata\s+studio\b",
+        r"\bmarketing\s+dashboard\b|\breporting\b"
     ],
 
-    "aeo_ai_search": [
-        r"\bAEO\b", r"answer engine optim(iz|is)ation",
-        r"ai search", r"search in (chatgpt|gpt)", r"chatgpt search",
-        r"generative search", r"\bSGE\b", r"search generative experience",
-        r"ai answers?", r"llm(s)?", r"large language model(s)?",
-        r"featured snippet(s)?", r"people also ask", r"\bPAA\b",
-        r"knowledge panel", r"entity(ies)?", r"topic cluster(s)?",
-        r"semantic SEO", r"topical authority", r"E-E-A-T|EEAT|EAT",
-        r"schema", r"structured data"
+    "cro_ux_conversion": [
+        r"\bcro\b|\bconversion\s+rate\s+optim(iz|is)ation\b",
+        r"\bconversion\s+rate(s)?\b", r"\bcheckout\b.*\boptim(iz|is)ation\b",
+        r"\bcheckout\s+flow\b", r"\bfunnel\s+(drop[-\s]?off|leak|leaky)\b",
+        r"\blanding\s+page(s)?\b.*\boptim(iz|is)ation\b",
+        r"\bproduct\s+page\b|\bpdp\b", r"\badd\s+to\s+cart\b",
+        r"\ba\/b\s+test(ing)?\b|\bsplit\s+test(ing)?\b",
+        r"\bheatmap(s)?\b|\bsession\s+recording(s)?\b",
+        r"\bpage\s+speed\b|\bsite\s+speed\b|\bcore\s+web\s+vitals\b|\bcwv\b",
+        r"\bux\b|\buser\s+experience\b"
     ],
 
-    "conversion_cro": [
-        r"\bCRO\b", r"conversion rate optim(iz|is)ation",
-        r"improv(e|ing) conversions?", r"conversion rate(s)?",
-        r"funnel(s)?", r"drop-?off", r"bounce rate",
-        r"lead form(s)?", r"form optimization",
-        r"A/B test(ing)?", r"split test(ing)?",
-        r"checkout optimization", r"landing page optimization"
+    "ecommerce_unit_econ": [
+        r"\baov\b|\baverage\s+order\s+value\b",
+        r"\bbasket\s+size\b", r"\bcart\s+value\b",
+        r"\bunit\s+economics\b", r"\bmargins?\b",
+        r"\bcac\b|\bcpl\b|\bcpa\b", r"\broas\b|\broi\b",
+        r"\bltv\b|\bcustomer\s+lifetime\s+value\b",
+        r"\bconversion\s+rate\b.*\bprofit\b",
+        r"\breturn\s+rate\b|\brefund(s)?\b"
     ],
 
-    "analytics_tracking": [
-        r"\bGA4\b", r"google analytics", r"tag manager", r"\bGTM\b",
-        r"pixel(s)?", r"conversion tracking", r"event tracking",
-        r"attribution", r"UTM(s)?", r"reporting dashboard",
-        r"search console", r"\bGSC\b", r"look(er)? studio|data studio",
-        r"CRM tracking", r"lead tracking"
+    "creative_ugc_video": [
+        r"\bugc\b|\buser\s+generated\s+content\b",
+        r"\bperformance\s+creative(s)?\b",
+        r"\bvideo[-\s]?first\b", r"\bshort[-\s]?form\b",
+        r"\bhook(s)?\b", r"\bthumbstop(per)?\b",
+        r"\bproblem[-\s]?solution\b", r"\bbefore[-\s]?after\b",
+        r"\btestimonial(s)?\b", r"\bcreator(s)?\b|\binfluencer(s)?\b",
+        r"\bcreative\s+strategy\b", r"\bscript(s|ing)?\b", r"\bstoryboard(s)?\b",
+        r"\bad\s+creative(s)?\b"
     ],
 
-    "content_brand": [
-        r"content strateg(y|ies)", r"content marketing",
-        r"blog(s)?", r"thought leadership", r"case study|case studies",
-        r"brand(ing)?", r"rebrand(ing)?", r"brand refresh",
-        r"messag(ing|e)", r"positioning", r"copywriting",
-        r"editorial calendar", r"content plan"
+    "creative_testing_iteration": [
+        r"\bcreative\s+test(ing)?\b", r"\btest\s+and\s+learn\b",
+        r"\ba\/b\s+test(ing)?\b", r"\bvariant(s)?\b",
+        r"\biteration(s)?\b|\biterate\b",
+        r"\bcreative\s+iteration\b", r"\bconcept(s)?\b",
+        r"\bangle(s)?\b", r"\bmessage\s+testing\b",
+        r"\bwinning\s+creative(s)?\b", r"\bcreative\s+insight(s)?\b"
     ],
 
-    "performance_marketing": [
-        r"paid ads?", r"\bPPC\b", r"google ads", r"search ads",
-        r"meta ads|facebook ads|instagram ads", r"linkedin ads",
-        r"retarget(ing)?|remarket(ing)?", r"campaign(s)?",
-        r"\bCAC\b", r"cost per lead|CPL", r"ROAS|ROI",
-        r"lead gen campaign", r"demand gen"
+    "marketplace_ads": [
+        r"\bamazon\s+ads?\b|\bamazon\s+sponsored\b",
+        r"\bflipkart\s+ads?\b", r"\bmyntra\b", r"\bajio\b",
+        r"\btata\s+cliq\b", r"\bnykaa\b",
+        r"\bmarketplace\s+ads?\b|\bmarketplace\s+advertis(ing|ement)\b",
+        r"\bsponsored\s+products?\b|\bsponsored\s+brands?\b",
+        r"\bmarketplace\s+ppc\b", r"\bsearch\s+rank(ing)?\b.*\bmarketplace\b"
+    ],
+
+    "marketplace_ops_listings": [
+        r"\bmarketplace\s+growth\b|\bmarketplace\s+ops\b|\bmarketplace\s+operations\b",
+        r"\blisting(s)?\b.*\boptim(iz|is)ation\b",
+        r"\bproduct\s+listing(s)?\b", r"\bcatalog(ue)?\b",
+        r"\bcontent\s+optim(iz|is)ation\b.*\b(listing|catalog)\b",
+        r"\bproduct\s+title(s)?\b|\bbullet\s+point(s)?\b|\bproduct\s+description(s)?\b",
+        r"\bsearch\s+rank(ing)?\b", r"\bcategory\s+ranking\b",
+        r"\binventory\b|\bstock[-\s]?out\b", r"\bpricing\b|\bdiscount(s)?\b"
+    ],
+
+    "lead_generation_b2b": [
+        r"\blead\s+gen(eration)?\b", r"\bclient\s+acquisition\b",
+        r"\bpipeline\b", r"\bappointments?\b|\bmeetings?\b",
+        r"\binbound\s+leads?\b|\boutbound\b",
+        r"\bqualified\s+lead(s)?\b", r"\bhigh[-\s]?intent\b"
     ],
 
     "business_triggers": [
-        r"launch(ing)?", r"new (location|locations)", r"open(ing)? (a )?new",
-        r"expansion", r"scal(ing|e)", r"growth",
-        r"hiring (marketing|growth|digital|seo|content)",
-        r"rebrand(ing)?", r"website (issue|issues|problem|problems)",
-        r"traffic drop", r"ranking drop", r"lead(s)? down",
-        r"pipeline (issue|issues)", r"need more leads", r"low visibility"
+        r"\blaunch(ing)?\b", r"\bnew\s+product\b|\bproduct\s+launch\b",
+        r"\bscal(ing|e)\b|\bexpansion\b|\bgrowth\b",
+        r"\btraffic\s+drop\b|\broas\s+drop\b|\bconversion\s+drop\b",
+        r"\bneed\s+more\s+leads\b|\bleads?\s+down\b",
+        r"\bhiring\b.*\b(marketing|growth|performance|paid|creative|seo)\b",
+        r"\brebrand(ing)?\b|\bnew\s+website\b|\bsite\s+redesign\b",
+        r"\bmarketplace\b.*\bexpansion\b"
     ]
 }
 
