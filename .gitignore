@@ -1,0 +1,45 @@
+# --- PYTHON ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+
+# --- VENV ---
+.venv/
+env/
+venv/
+
+# --- OS FILES ---
+.DS_Store
+Thumbs.db
+
+# --- LOGS & CACHE ---
+*.log
+*.tmp
+.cache/
+.ipynb_checkpoints/
+
+# --- IDE / PYCHARM ---
+.idea/
+.vscode/
+*.iml
+
+# --- DATA FILES (CSV, EXPORTS) ---
+*.csv
+*.xlsx
+*.xls
+*.tsv
+
+# If you want to commit *some* CSVs, remove the line above and list ignored data folders:
+# data/
+# output/
+
+# --- MODEL ARTIFACTS ---
+*.pkl
+*.pickle
+*.joblib
+
+# --- MAKE / PHANTOMBUSTER EXPORTS ---
+export_*/
+phantombuster_*/
