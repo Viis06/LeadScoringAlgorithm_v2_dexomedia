@@ -137,107 +137,124 @@ SENIORITY_WEIGHTS = {
 
 # Role relevance aligned to Pangolin AI (sales automation for digital marketing agencies)
 ROLE_PATTERNS = {
-    # ===== Highest Intent: 1.0 =====
+    # ===== Highest Intent: Marketing & Growth Leadership (1.0) =====
     "founder_ceo_owner": (1.0, [
         r"\bfounder\b", r"\bco-?founder\b", r"\bowner\b", r"\bproprietor\b",
         r"\bceo\b", r"\bchief\s+executive\s+officer\b",
         r"\bmanaging\s+director\b", r"\bmd\b", r"\bpartner\b"
     ]),
 
-    "marketing_leadership": (1.0, [
+    "marketing_growth_leadership": (1.0, [
         r"\bcmo\b", r"\bchief\s+marketing\s+officer\b",
         r"\bvp\s+marketing\b", r"\bavp\s+marketing\b",
         r"\bhead[-\s]?of\s+marketing\b", r"\bmarketing\s+director\b",
-        r"\bmarketing\s+head\b", r"\bgrowth\s+director\b", r"\bhead[-\s]?of\s+growth\b"
+        r"\bmarketing\s+head\b",
+
+        r"\bvp\s+growth\b", r"\bhead[-\s]?of\s+growth\b", r"\bgrowth\s+director\b",
+        r"\bhead[-\s]?of\s+acquisition\b", r"\bacquisition\s+director\b",
+        r"\bhead[-\s]?of\s+performance\b", r"\bperformance\s+marketing\s+director\b"
     ]),
 
-    "seo_leadership": (1.0, [
-        r"\bhead[-\s]?of\s+seo\b", r"\bseo\s+director\b", r"\bseo\s+lead\b",
-        r"\bseo\s+manager\b", r"\bseo\s+head\b",
-        r"\bsearch\s+director\b", r"\bsearch\s+lead\b", r"\bsearch\s+manager\b",
-        r"\borganic\s+growth\s+(lead|manager|head)\b"
+    # ===== Highest Intent: Paid Media / Acquisition (1.0) =====
+    "paid_media_performance": (1.0, [
+        r"\bperformance\s+marketing\b", r"\bpaid\s+media\b",
+        r"\bpaid\s+social\b", r"\bpaid\s+search\b",
+        r"\bmedia\s+buyer\b", r"\bmedia\s+buying\b",
+        r"\buser\s+acquisition\b", r"\bacquisition\s+manager\b", r"\bacquisition\s+lead\b",
+        r"\bgrowth\s+marketer\b", r"\bgrowth\s+marketing\b",
+
+        r"\bgoogle\s+ads\b", r"\bppc\b", r"\bsem\b",
+        r"\bsearch\s+ads\b", r"\bdisplay\s+ads\b", r"\byoutube\s+ads\b",
+        r"\bmeta\s+ads\b|\bfacebook\s+ads\b|\binstagram\s+ads\b",
+        r"\btiktok\s+ads\b", r"\bsnapchat\s+ads\b", r"\bpinterest\s+ads\b",
+        r"\bprogrammatic\b", r"\bperformance\s+manager\b",
+        r"\bdemand\s+gen(eration)?\b", r"\blead\s+gen(eration)?\b"
     ]),
 
-    "seo_specialist_technical": (1.0, [
-        r"\btechnical\s+seo\b", r"\bseo\s+specialist\b", r"\bseo\s+strategist\b",
-        r"\bsearch\s+strategist\b", r"\bsearch\s+specialist\b",
-        r"\bon[-\s]?page\s+seo\b", r"\boff[-\s]?page\s+seo\b",
-        r"\blink\s+building\b", r"\bcontent\s+seo\b", r"\bseo\s+analyst\b",
-        r"\bseo\s+consultant\b"
+    # ===== Highest Intent: eCommerce / Marketplace Growth (0.95) =====
+    "ecommerce_marketplace_growth": (0.95, [
+        r"\be-?commerce\b|\becommerce\b", r"\bd2c\b|\bdirect[-\s]?to[-\s]?consumer\b",
+        r"\bmarketplace\b", r"\bmarketplace\s+growth\b",
+        r"\bmarketplace\s+ops\b|\bmarketplace\s+operations\b",
+        r"\bamazon\b", r"\bflipkart\b", r"\bmyntra\b", r"\bajio\b", r"\btata\s+cliq\b", r"\bnykaa\b",
+
+        r"\bamazon\s+ads\b|\bamazon\s+advertis(ing|ement)\b",
+        r"\bmarketplace\s+ads\b", r"\bmarketplace\s+advertis(ing|ement)\b",
+        r"\bcatalog(ue)?\b", r"\blistings?\b", r"\blisting\s+optim(iz|is)ation\b",
+        r"\baccount\s+manager\b.*\b(amazon|flipkart|myntra|nykaa)\b",
+        r"\bcategory\s+manager\b", r"\becom(merce)?\s+manager\b",
+        r"\bkey\s+account\b.*\b(amazon|flipkart|myntra|ajio|nykaa)\b"
     ]),
 
-    "performance_growth_paid": (1.0, [
-        r"\bgrowth\s+manager\b", r"\bgrowth\s+lead\b", r"\bgrowth\s+marketing\b",
-        r"\bperformance\s+marketing\b", r"\bperformance\s+marketer\b",
-        r"\bpaid\s+(search|media)\b", r"\bsearch\s+ads\b", r"\bgoogle\s+ads\b",
-        r"\bppc\b", r"\bsem\b", r"\bdemand\s+gen(eration)?\b",
-        r"\bacquisition\s+manager\b", r"\buser\s+acquisition\b",
-        r"\bmedia\s+buyer\b"
+    # ===== High Intent: CRO / Product Growth / UX (0.95) =====
+    "cro_conversion_ux": (0.95, [
+        r"\bcro\b", r"\bconversion\s+rate\s+optim(iz|is)ation\b",
+        r"\bconversion\s+optim(iz|is)ation\b", r"\bconversion\s+specialist\b",
+        r"\bcro\s+(lead|manager|head)\b",
+        r"\bgrowth\s+product\b|\bproduct\s+growth\b",
+        r"\bux\b|\buser\s+experience\b", r"\bux\s+research\b",
+        r"\bfunnel\s+optim(iz|is)ation\b", r"\blanding\s+page\b.*\boptim(iz|is)ation\b",
+        r"\bcheckout\b.*\boptim(iz|is)ation\b", r"\baov\b|\basket\s+size\b"
     ]),
 
-    "web_dev_engineering": (1.0, [
-        r"\bweb\s+developer\b", r"\bwebsite\s+developer\b",
-        r"\bfrontend\b", r"\bfront[-\s]?end\b", r"\bfull[-\s]?stack\b",
-        r"\bwordpress\b", r"\bwebflow\b", r"\bshopify\b", r"\bwix\b", r"\bsquarespace\b",
-        r"\bweb\s+engineer\b", r"\bsoftware\s+engineer\b.*\b(web|frontend)\b",
-        r"\bwebsite\s+manager\b", r"\bweb\s+manager\b"
+    # ===== High Intent: Creative Performance / UGC / Video (0.95) =====
+    "creative_performance_ugc": (0.95, [
+        r"\bcreative\s+strategist\b", r"\bcreative\s+strategy\b",
+        r"\bperformance\s+creative(s)?\b", r"\bpaid\s+social\s+creative\b",
+        r"\bcreative\s+testing\b", r"\bcreative\s+iteration\b",
+
+        r"\bugc\b|\buser\s+generated\s+content\b",
+        r"\bvideo\s+editor\b", r"\bvideo\s+producer\b", r"\bcontent\s+producer\b",
+        r"\bmotion\s+designer\b|\bmotion\s+graphics\b",
+        r"\bshort[-\s]?form\b", r"\breels?\b", r"\btiktok\b",
+
+        r"\bcreative\s+director\b", r"\bart\s+director\b",
+        r"\bcopywriter\b", r"\bscriptwriter\b|\bscript\s+writer\b",
+        r"\bbrand\s+designer\b|\bgraphic\s+designer\b"
     ]),
 
-    "ux_ui_design": (0.95, [
-        r"\bui\s*/\s*ux\b", r"\bux\b", r"\bui\b",
-        r"\bproduct\s+designer\b", r"\bui\s+designer\b", r"\bux\s+designer\b",
-        r"\bweb\s+designer\b", r"\bvisual\s+designer\b"
+    # ===== Strong Adjacent: Analytics / Attribution / MarTech (0.9) =====
+    "analytics_attribution_ops": (0.9, [
+        r"\bmarketing\s+ops\b|\bmarketing\s+operations\b", r"\bmartech\b",
+        r"\battribution\b", r"\bmeasurement\b", r"\btracking\b",
+        r"\bga4\b|\bgoogle\s+analytics\b", r"\bgtm\b|\btag\s+manager\b",
+        r"\bpixel(s)?\b", r"\bconversion\s+tracking\b", r"\bevent\s+tracking\b",
+        r"\blook(er)?\s+studio\b|\bdata\s+studio\b",
+        r"\bperformance\s+analyst\b", r"\bmarketing\s+analyst\b", r"\bgrowth\s+analyst\b",
+        r"\bcrm\b", r"\bhubspot\b", r"\bsalesforce\b"
     ]),
 
-    # ===== High Adjacent: 0.85–0.95 =====
-    "marketing_ops_analytics": (0.95, [
-        r"\bmarketing\s+ops\b", r"\bmarketing\s+operations\b",
-        r"\bmartech\b", r"\bcrm\b", r"\bhubspot\b", r"\bsalesforce\b",
-        r"\bga4\b", r"\bgoogle\s+analytics\b", r"\bgtm\b", r"\btag\s+manager\b",
-        r"\bsearch\s+console\b", r"\bgsc\b", r"\battribution\b",
-        r"\bmarketing\s+analyst\b", r"\bperformance\s+analyst\b", r"\bdata\s+analyst\b",
-        r"\binsights?\b", r"\bgrowth\s+analyst\b"
-    ]),
-
-    "content_strategy": (0.9, [
-        r"\bcontent\s+strategist\b", r"\bcontent\s+strategy\b",
-        r"\bcontent\s+manager\b", r"\bcontent\s+marketing\b",
-        r"\bcopywriter\b", r"\bcontent\s+writer\b", r"\beditor\b",
-        r"\bcontent\s+lead\b", r"\beditorial\b"
-    ]),
-
-    "brand_pr_social": (0.85, [
+    # ===== Adjacent: Brand / Content / Social (0.8) =====
+    "brand_content_social": (0.8, [
         r"\bbrand\s+manager\b", r"\bbrand\s+marketing\b",
-        r"\bcommunications?\b", r"\bpr\b", r"\bpublic\s+relations\b",
+        r"\bcontent\s+marketing\b", r"\bcontent\s+manager\b",
         r"\bsocial\s+media\b", r"\bsocial\s+media\s+manager\b",
-        r"\bcommunity\s+manager\b"
+        r"\bcommunity\s+manager\b", r"\bcommunications?\b", r"\bpr\b"
     ]),
 
-    # ===== Lower Priority / De-prioritized: 0.45–0.65 =====
-    "sales_roles": (0.5, [
+    # ===== Lower Priority (still useful) =====
+    "client_services": (0.7, [
+        r"\baccount\s+manager\b", r"\baccount\s+director\b",
+        r"\bclient\s+services?\b", r"\bclient\s+partner\b",
+        r"\bcustomer\s+success\b", r"\bclient\s+success\b"
+    ]),
+
+    "sales_roles": (0.55, [
         r"\bsdr\b", r"\bbdr\b", r"\bsales\s+development\b",
         r"\baccount\s+executive\b", r"\bae\b",
         r"\bsales\s+manager\b", r"\bhead[-\s]?of\s+sales\b",
         r"\bbusiness\s+development\b", r"\bbdm\b"
     ]),
 
-    "client_services": (0.6, [
-        r"\baccount\s+manager\b", r"\baccount\s+director\b",
-        r"\bclient\s+services?\b", r"\bclient\s+partner\b",
-        r"\bcustomer\s+success\b", r"\bclient\s+success\b"
-    ]),
-
-    # ===== Peripheral / Noise: 0.15–0.25 =====
+    # ===== Peripheral / Noise =====
     "hr_recruiting": (0.2, [
         r"\bhr\b", r"\bhuman\s+resources?\b",
         r"\brecruit(ing|er)\b", r"\btalent\s+acquisition\b", r"\bpeople\s+ops\b"
     ]),
-
     "finance_admin": (0.2, [
         r"\bfinance\b", r"\baccounts?\b", r"\bbookkeeper\b",
         r"\bpayroll\b", r"\baccountant\b"
     ]),
-
     "legal_compliance": (0.15, [
         r"\blegal\b", r"\bcompliance\b", r"\blegal\s+counsel\b"
     ])
